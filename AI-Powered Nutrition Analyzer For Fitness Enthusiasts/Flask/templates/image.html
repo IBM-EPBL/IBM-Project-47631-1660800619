@@ -1,88 +1,40 @@
-<html>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Home | IBM</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-     .nav.navbar-nav{
-   margin-left: 75px;
-   }
-   .navbar-brand{
-    font-size: 22px;
-   }
-   body
-   {
-     background-image: url(food.jpg);
-     background-size: cover;
-   }
-  
-   input[type="file"]::file-selector-button {
-            background-color: #12ee1a;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-          }
-    input[type="file"]::file-selector-button:hover  {
-      background-color: #12ee1a;
-      border: 2px solid #00cec9;
-      
 
-    }
-    
-    .login{
-      background-color: #2a2ddd;
 
-            border: none;
-            border-radius: 10px;
-            color: white;
-            padding: 8px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-    }
 
-    {
+{% extends "imageprediction.html" %} {% block content %}
+<div style="float:left">
+<br>
+<br>
+<h5><font color="black" size="3" font-family="sans-serif"><b>Upload image to classify</b></font></h5><br><br>
 
-    }
-   </style>
-   </head>
-   <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><b>Nutrition Images Analysis</b></a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li ><a href="home.html">Home</a></li>
-            <li class="active"><a href="#">classify</a></li>
-          </ul>
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+       <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+   <center> <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div></center>
         </div>
-      </nav><br><br><br><br>
-      <div>
-        <center>
-            <form>
-               <label for ="fileUpload"><h3>Upload Image to classify</h3></label><br><br>
-               <input type="file" id="file"  />
-            </form>
-            <img src="Test_Image11.jpg" alt="manga mantaya" height="120px" width="140px">
-              <a href="imagepreduction.html"><input type="submit" value="classify"></a>
-         </div>
-         
-   </body>
-   </html>
-</html>
+        <center><div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Classify</button>
+       </center></div>
+    </div>
+
+    <div class="loader" style="display:none;margin-left: 450px;"></div>
+
+    <h3 id="result">
+     
+        <span><p style="padding-top: 25px;"><h4>Food Classified is : <h4><b><u>{{showcase}}{{showcase1}}</p> </span>
+    </h3>
+
+</div>
+</div>
+
+       
+
+{% endblock %}
