@@ -55,10 +55,39 @@
             margin: 4px 2px;
             cursor: pointer;
     }
-
-    {
-
+    h2{
+        color: rgb(20, 211, 211);
+        position: absolute;
+        left:58%;
+        top:30%;
+        width: 450px;
+        text-align: center;
     }
+    P{
+        color: rgba(21, 255, 0, 0.822);
+        position: absolute;
+        font-size: x-large;
+        left:58%;
+        top:40%;
+        width: 450px;
+        text-align: center; 
+    }
+    pre{
+        color: rgb(255, 0, 0);
+        font-size: medium;
+        position: absolute;
+        display: flex;
+        overflow: hidden;
+        left:50%;
+        top: 45%;
+        width: 650px;
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        padding: 20px;
+    
+    }
+  
    </style>
    </head>
    <body>
@@ -74,15 +103,23 @@
         </div>
       </nav><br><br><br><br>
       <div>
-        <center>
-            <form>
-               <label for ="fileUpload"><h3>Upload Image to classify</h3></label><br><br>
-               <input type="file" id="file"  />
-            </form>
-            <img src="Test_Image11.jpg" alt="manga mantaya" height="120px" width="140px">
-              <a href="imagepreduction.html"><input type="submit" value="classify"></a>
-         </div>
-         
+    
+    <center>
+       <form>
+          <label for ="fileUpload"><h3>Upload Image to classify</h3></label><br><br>
+          <input type="file" id="file"  />
+       </form>
+       <img src="Test_Image11.jpg" alt="manga mantaya" height="120px" width="140px">
+    </div>
+    <h2>Food Classifed is:</h2>
+    <p><u>APPLES</u></p>
+    <pre>
+        [{'sugar g':10, 'fiber g':2.4, 'sodium mg':1,
+       'name':apple, 'potassium mg':107, 'saturated g':0.1,
+       'cholesterol mg:0', 'protein g':0.3, 'carbohydrate g':14}]</pre>
+
+
    </body>
    </html>
 </html>
+   

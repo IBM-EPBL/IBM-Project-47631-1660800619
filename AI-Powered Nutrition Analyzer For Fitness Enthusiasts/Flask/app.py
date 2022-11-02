@@ -3,14 +3,14 @@ from flask import Flask,render_template,request
 #request-for accessing file which was uploaded by the user on our application.
 import os
 import numpy as np #used for numerical analysis
-from tensorflow.keras.models import load_model#to load our trained model
-from tensorflow.keras.preprocessing import image
+from keras.models import load_model#to load our trained model
+from keras.preprocessing import image
 import requests
 
 
 app = Flask(__name__,template_folder="templates") # initializing a flask app
 # Loading the model
-model=load_model('nutrition.h5')
+model=load_model('C:/Users/Mugesh/Music/IBM-Project-47631-1660800619/AI-Powered Nutrition Analyzer For Fitness Enthusiasts/Flask/nutrition.h5')
 print("Loaded model from disk")
 
 
